@@ -19,7 +19,8 @@ st.markdown("""
     h3 { font-size: 18px !important; }
     h4 { font-size: 16px !important; }
             
-    
+    /* Ocultar el menú de configuración en la esquina superior derecha */
+    header {visibility: hidden;}
             
     </style>
     """, unsafe_allow_html=True)
