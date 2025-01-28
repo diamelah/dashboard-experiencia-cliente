@@ -4,11 +4,13 @@ import matplotlib.pyplot as plt
 import os
 
 def cargar_csv():
-    """Carga automáticamente el archivo verbatims_categorias.csv desde la carpeta data/"""
-    ruta = os.path.join("data", "verbatims_categorias.csv")
-    if os.path.exists(ruta):
-        return pd.read_csv(ruta, delimiter=';')
-    else:
+    """Carga automáticamente el archivo verbatims_categorias.csv desde GitHub"""
+    url = "https://raw.githubusercontent.com/diamelah/dashboard-experiencia-cliente/main/data/verbatims_categorias.csv"
+    
+    try:
+        return pd.read_csv(url, delimiter=";", encoding="utf-8")
+    except Exception as e:
+        st.error(f"Error al cargar el archivo CSV: {e}")
         return None
 
 def run():
