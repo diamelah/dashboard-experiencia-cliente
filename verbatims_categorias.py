@@ -5,7 +5,7 @@ import os
 
 def cargar_csv():
     """Carga automáticamente el archivo verbatims_categorias.csv desde GitHub"""
-    url = "https://raw.githubusercontent.com/diamelah/dashboard-experiencia-cliente/main/data/verbatims_categorias.csv"
+    url = "https://raw.githubusercontent.com/diamelah/dashboard-experiencia-cliente/main/Data/verbatims_categorias.csv"
     
     try:
         return pd.read_csv(url, delimiter=";", encoding="utf-8")
