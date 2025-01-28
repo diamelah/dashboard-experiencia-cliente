@@ -8,13 +8,13 @@ import os  # Para manejar rutas de archivos
 
 # Función para cargar el CSV automáticamente desde la carpeta 'data'
 def cargar_csv():
-    """Carga automáticamente el archivo analisis_dolor.csv desde la carpeta data/"""
-    ruta = os.path.join("data", "analisis_dolor.csv")
-
-    if os.path.exists(ruta):
-        return pd.read_csv(ruta, delimiter=';', encoding="utf-8", on_bad_lines="skip")
-    else:
-        st.error(f"No se encontró el archivo en: {ruta}")
+    """Carga automáticamente el archivo analisis_dolor.csv desde GitHub"""
+    url = "https://raw.githubusercontent.com/diamelah/dashboard-experiencia-cliente/main/Data/analisis_dolor.csv"
+    
+    try:
+        return pd.read_csv(url, delimiter=";", encoding="utf-8")
+    except Exception as e:
+        st.error(f"Error al cargar el archivo CSV: {e}")
         return None
 
 
